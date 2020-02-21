@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:neumorphic/neumorphic.dart';
 
 import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:bmi_calculator/constants.dart';
@@ -47,6 +48,9 @@ class _InputPageState extends State<InputPage> {
                       color: selectedGender == Gender.male
                           ? kActiveCardColor
                           : kInactiveCardColor,
+                      curveType: selectedGender == Gender.male
+                          ? CurveType.emboss
+                          : CurveType.flat,
                       onPress: () {
                         setState(() {
                           selectedGender = Gender.male;
@@ -62,6 +66,9 @@ class _InputPageState extends State<InputPage> {
                       color: selectedGender == Gender.female
                           ? kActiveCardColor
                           : kInactiveCardColor,
+                      curveType: selectedGender == Gender.female
+                          ? CurveType.emboss
+                          : CurveType.flat,
                       onPress: () {
                         setState(() {
                           selectedGender = Gender.female;

@@ -36,7 +36,7 @@ class NumericParameterContent extends StatelessWidget {
               icon: FontAwesomeIcons.minus,
               onPress: onPressed1,
             ),
-            SizedBox(width: 10.0),
+            SizedBox(width: 20.0),
             RoundIconButton(
               icon: FontAwesomeIcons.plus,
               onPress: onPressed2,

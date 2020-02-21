@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 const double kBottomContainerHeight = 80.0;
 const Color kBottomContainerColor = Color(0xFFEB1555);
-const Color kActiveCardColor = Color(0xFF1D1E33);
-const Color kInactiveCardColor = Color(0xFF111328);
+const Color kActiveCardColor = Color(0xFF0A0E21);
+const Color kInactiveCardColor = Color(0xFF090C1C);
+const double kCardElevation = 12.0;
+const kCardMargin = 20.0;
+const kCardRadius = 10.0;
 
 const Color kButtonColor = Color(0xFF4C4F5E);
 

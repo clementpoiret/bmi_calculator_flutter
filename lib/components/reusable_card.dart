@@ -1,14 +1,18 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
-
-const margin = 15.0;
-const radius = 10.0;
+import 'package:neumorphic/neumorphic.dart';
 
 class ReusableCard extends StatelessWidget {
   final Color color;
   final Widget cardChild;
   final Function onPress;
+  final CurveType curveType;
 
-  ReusableCard({@required this.color, this.cardChild, this.onPress});
+  ReusableCard(
+      {@required this.color,
+      this.cardChild,
+      this.onPress,
+      this.curveType = CurveType.flat});
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +20,15 @@ class ReusableCard extends StatelessWidget {
       onTap: () {
         onPress();
       },
-      child: Container(
-        child: cardChild,
-        margin: EdgeInsets.all(margin),
-        decoration: BoxDecoration(
+      child: NeuCard(
+        margin: EdgeInsets.all(kCardMargin),
+        curveType: curveType,
+        bevel: kCardElevation,
+        decoration: NeumorphicDecoration(
+          borderRadius: BorderRadius.circular(kCardRadius),
           color: color,
-          borderRadius: BorderRadius.circular(radius),
         ),
+        child: cardChild,
       ),
     );
   }

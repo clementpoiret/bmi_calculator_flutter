@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neumorphic/neumorphic.dart';
 
 import 'package:bmi_calculator/constants.dart';
 
@@ -10,16 +11,23 @@ class RoundIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RawMaterialButton(
-      elevation: 0.0,
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
+    return GestureDetector(
+      onTap: () {
+        onPress();
+      },
+      child: NeuCard(
+        curveType: CurveType.flat,
+        bevel: kCardElevation,
+        constraints: BoxConstraints.tightFor(
+          width: 56.0,
+          height: 56.0,
+        ),
+        decoration: NeumorphicDecoration(
+          borderRadius: BorderRadius.circular(56),
+          color: kActiveCardColor,
+        ),
+        child: Icon(icon),
       ),
-      shape: CircleBorder(),
-      fillColor: kButtonColor,
-      child: Icon(icon),
-      onPressed: onPress,
     );
   }
 }

@@ -46,21 +46,47 @@ class ResultsPage extends StatelessWidget {
             child: ReusableCard(
               color: kActiveCardColor,
               cardChild: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text(
-                    args.resultText.toUpperCase(),
-                    style: kResultTextStyle,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 32, 0.0, 16),
+                    child: Text(
+                      args.resultText.toUpperCase(),
+                      style: kResultTextStyle,
+                    ),
                   ),
                   Text(
-                    args.bmiResult,
-                    style: kBmiTextStyle,
+                    "Normal BMI range:",
+                    style: kTextStyle,
+                  ),
+                  SizedBox(
+                    height: 8.0,
                   ),
                   Text(
-                    args.interpretation,
+                    "18.5 - 25 kg/m2",
                     textAlign: TextAlign.center,
                     style: kBodyTextStyle,
+                  ),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Text(
+                              args.bmiResult,
+                              style: kBmiTextStyle,
+                            ),
+                          ],
+                        ),
+                        Text(
+                          args.interpretation,
+                          textAlign: TextAlign.center,
+                          style: kBodyTextStyle,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
